@@ -28,6 +28,7 @@
 import sys
 import config
 import threading
+import time 
 from App import controller
 from DISClib.ADT import stack
 assert config
@@ -135,14 +136,20 @@ def thread_cycle():
         elif int(inputs[0]) == 4:
             msg = "Estación Base: BusStopCode-ServiceNo (Ej: 75009-10): "
             initialStation = input(msg)
+            time_1 = float(time.perf_counter())
             optionFour(cont, initialStation)
+            time_2 = float(time.perf_counter())
+            print(f"Tiempo de ejecución: {time_2-time_1}")
 
         elif int(inputs[0]) == 5:
             destStation = input("Estación destino (Ej: 15151-10): ")
             optionFive(cont, destStation)
 
         elif int(inputs[0]) == 6:
+            time_1 = float(time.perf_counter())
             destStation = input("Estación destino (Ej: 15151-10): ")
+            time_2 = float(time.perf_counter())
+            print(f"Tiempo de ejecución: {time_2-time_1}")
             optionSix(cont, destStation)
 
         elif int(inputs[0]) == 7:
