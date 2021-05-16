@@ -146,11 +146,11 @@ def thread_cycle():
             optionFive(cont, destStation)
 
         elif int(inputs[0]) == 6:
-            time_1 = float(time.perf_counter())
             destStation = input("Estación destino (Ej: 15151-10): ")
+            time_1 = float(time.perf_counter())
+            optionSix(cont, destStation)
             time_2 = float(time.perf_counter())
             print(f"Tiempo de ejecución: {time_2-time_1}")
-            optionSix(cont, destStation)
 
         elif int(inputs[0]) == 7:
             optionSeven(cont)
